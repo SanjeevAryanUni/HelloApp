@@ -2,12 +2,28 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        // Default name
-        String name = "World";
+        String name;
 
-        // Check if argument is provided
-        if (args.length > 0) {
-            name = args[0];
+        // Default case
+        if (args.length == 0) {
+            name = "World";
+        } else {
+
+            StringBuilder nameBuilder = new StringBuilder();
+            boolean first = true;
+
+            // Enhanced for loop
+            for (String arg : args) {
+
+                if (!first) {
+                    nameBuilder.append(", ");
+                }
+
+                nameBuilder.append(arg);
+                first = false;
+            }
+
+            name = nameBuilder.toString();
         }
 
         System.out.println("Hello, " + name + "!");
