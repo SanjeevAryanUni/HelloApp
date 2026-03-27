@@ -2,14 +2,16 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        // Default name
-        String name = "World";
+        String names;
 
-        // Check if argument is provided
-        if (args.length > 0) {
-            name = args[0];
+        // Default case
+        if (args.length == 0) {
+            names = "World";
+        } else {
+            // Join all arguments with comma
+            names = String.join(", ", args);
         }
 
-        System.out.println("Hello, " + name + "!");
+        System.out.println("Hello, " + names + "!");
     }
 }
